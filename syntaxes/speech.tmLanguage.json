@@ -1,0 +1,81 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Speech Language",
+	"patterns": [
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#speech-infos"
+		},
+		{
+			"include": "#replique"
+		}
+	],
+	"repository": {
+		"functions": {
+			"patterns": [{
+				"match": "((add_hint|add_step|step|place|set_step)\\s*:\\s*)([^ ,\\n]+)",
+				"captures": {
+					"1" : {"name": "constant.character"},
+					"3" : {"name": "variable.name"}
+				}
+			},
+			{
+				"name" : "constant.character",
+				"match": "finish"
+			},
+			{
+				"match": "(goto\\(\\s*([^\\(\\)]*)\\s*\\))",
+				"captures": {
+					"1" : {"name": "constant.character"},
+					"2" : {"name": "variable.name"}
+				}
+			}]
+		},
+		"speech-infos": {
+			"include": "#functions"
+		},
+		"replique": {
+			"contentName": "constant.character.escape.speech",
+			"begin": "\\[",
+			"end": "\\]",
+			"patterns": [
+				{	"match": "([^:\\[]+)(::)",
+					"captures": {
+						"1" : {"name": "comment.line"},
+						"2" : {"name": "constant.character"}
+					}
+				},
+				{
+					"match": "(choice\\s*=\\s*)(\\s*([^:\\/]+)\\s*:\\s*([^:\\/\\n]+)\\s*)?(\\/\\/\\s*([^:\\/]+)\\s*:\\s*([^:\\/\\n]+)\\s*)?(\\/\\/\\s*([^:\\/]+)\\s*:\\s*([^:\\/\\n]+)\\s*)?(\\/\\/\\s*([^:\\/]+)\\s*:\\s*([^:\\/\\n]+)\\s*)?",
+					"captures": {
+						"1" : {"name": "string.regexp"},
+						"2" : {"name": "constant.character"},
+						"3" : {"name": "variable.name"},
+						"4" : {"name": "constant.numeric"},
+						"5" : {"name": "constant.character"},
+						"6" : {"name": "variable.name"},
+						"7" : {"name": "constant.numeric"},
+						"8" : {"name": "constant.character"},
+						"9" : {"name": "variable.name"},
+						"10" : {"name": "constant.numeric"},
+						"11" : {"name": "constant.character"},
+						"12" : {"name": "variable.name"},
+						"13" : {"name": "constant.numeric"}
+					}
+				},
+				{
+					"name":"constant.numeric",
+					"match": "--[^-]*--"
+				},
+				{
+					"name":"string.regexp",
+					"match": "&&&"
+				},
+				{"include": "#functions"}
+			]
+		}
+	},
+	"scopeName": "source.speech"
+}

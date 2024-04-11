@@ -1,0 +1,31 @@
+{
+  "name": "Sheerduck-Bones-Speech",
+  "displayName": "Speech Redactor",
+  "description": "Speech Coloring System",
+  "version": "1.0.2",
+  "publisher": "Gandalfph",
+  "icon": "./src/game.png",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/Gandalfph/Sheerduck-Bones-Speech.git"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "speech",
+      "aliases": ["Speech Language", "speech"],
+      "extensions": [".speech"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "speech",
+      "scopeName": "source.speech",
+      "path": "./syntaxes/speech.tmLanguage.json"
+    }]
+  }
+}
