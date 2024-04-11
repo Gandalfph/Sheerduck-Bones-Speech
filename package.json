@@ -4,7 +4,7 @@
   "description": "Speech Coloring System",
   "version": "1.0.2",
   "publisher": "Gandalfph",
-  "icon": "./src/game.png",
+  "icon": "src/game.png",
   "engines": {
     "vscode": "^1.88.0"
   },
