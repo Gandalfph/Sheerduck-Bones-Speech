@@ -6,7 +6,7 @@
   "publisher": "Gandalfph",
   "icon": "src/game.png",
   "engines": {
-    "vscode": "^1.88.0"
+    "vscode": "^1.0.0"
   },
   "repository": {
 		"type": "git",
