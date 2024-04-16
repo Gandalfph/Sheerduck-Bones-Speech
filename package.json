@@ -2,7 +2,7 @@
   "name": "Sheerduck-Bones-Speech",
   "displayName": "Speech Redactor",
   "description": "Speech Coloring System",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "publisher": "Gandalfph",
   "icon": "src/game.png",
   "engines": {

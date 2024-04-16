@@ -15,7 +15,7 @@
 	"repository": {
 		"functions": {
 			"patterns": [{
-				"match": "((add_hint|add_step|step|place|set_step)\\s*:\\s*)([^ ,\\n]+)",
+				"match": "((add_hint|add_step|step|place|set_step|set_music)\\s*:\\s*)([^ ,\\n]+)",
 				"captures": {
 					"1" : {"name": "constant.character"},
 					"3" : {"name": "variable.name"}
@@ -23,7 +23,7 @@
 			},
 			{
 				"name" : "constant.character",
-				"match": "finish"
+				"match": "finish|stop_music"
 			},
 			{
 				"match": "(goto\\(\\s*([^\\(\\)]*)\\s*\\))",

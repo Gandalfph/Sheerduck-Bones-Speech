@@ -1,4 +1,7 @@
 # Change Log
+Version 1.0.5
+- Added Music Infos Detection
+
 Version 1.0.4
 - Changed Supported VSCode Version
 
